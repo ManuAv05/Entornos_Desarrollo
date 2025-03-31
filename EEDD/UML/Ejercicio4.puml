@@ -1,0 +1,17 @@
+@startuml
+
+class Biblioteca{
+-nombre: String
+-direccion: String
+}
+
+class Libro{
+-titulo: String
+-autor: String
+}
+
+Biblioteca "1" o-- "1 *" Libro : contiene
+
+
+
+@enduml

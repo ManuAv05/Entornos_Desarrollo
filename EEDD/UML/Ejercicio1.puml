@@ -1,0 +1,28 @@
+@startuml
+
+class Medico{
+-nombre: String
+-apellido: String
+-edad: int
+}
+class Paciente{
+-nombre: String
+-apellido: String
+-edad: int
+
+}
+class Hospital{
+-nombre: String
+-direccion: String
+-telefono: int
+}
+
+Medico " 1 " -- "*" Paciente
+Paciente "1" --> "1" Medico
+
+
+Medico "1" --> "1" Hospital
+Hospital "1" -- "*" Medico
+
+
+@enduml

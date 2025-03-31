@@ -1,0 +1,22 @@
+@startuml
+
+class Ordenador{
+-Marca: String
+-Modelo: String
+}
+
+Class Procesador{
+-Marca: String+
+-Modelo: String
+}
+
+Class MemoriaRam{
+-Marca: String
+-Capacidad: int
+}
+
+Ordenador "1" *-- "1" Procesador : tiene
+Ordenador "1" *-- "1 *" MemoriaRam : tiene
+
+
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+
+abstract class Facultades{
+-nombre: String
+-direccion: String
+}
+
+class Profesor{
+-nombre: String
+-apellido: String
+-edad: int
+--
++saludar(): void
++enseñar(): void
+}
+
+class Curso{
+-nombre: String
+-codigo: int
+
+}
+
+class Persona{
+-nombre: String
+-apellido: String
+-edad: int
+--
++saludar(): void
+}
+
+class Estudiante{
+-nombre: String
+-apellido: String
+-edad: int
+--
++saludar(): void
++estudiar(): void
+}
+
+class Universidad{
+-nombre: String
+-direccion: String
+}
+
+Persona <-- Profesor
+Persona <-- Estudiante
+
+Universidad "1" o-- "*" Facultades : agrega
+Facultades "1" --> "*" Profesor : tiene
+Profesor "1 " --o "*" Facultades : existen
+Estudiante "1 * " <--> "1 * " Curso : tiene
+
+
+
+@enduml
